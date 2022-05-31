@@ -11,26 +11,26 @@ int leftMotorForward = 2;
 int rightMotorForward = 15;
 int leftMotorBackward = 0;
 int rightMotorBackward = 13;
-int LLAGe = 0;
 int LLAGr = 0;
-int LRAGe = 0;
-int LRAGr = 0;
-int HeadLED = 0;
-void setup()
-{
-  Serial.begin(115200);
-  pinMode(leftMotorForward, OUTPUT);
-  pinMode(rightMotorForward, OUTPUT);
-  pinMode(leftMotorBackward, OUTPUT);
-  pinMode(rightMotorBackward, OUTPUT);
-  pinMode(LLAGe, OUTPUT);
+int LLABl = 0;
+int LLAGr = 0;
+int LRABl = 0;
+int LMBase = 0;
+int LMGr = 0;
+int LMRe = 0;
+int LTop = 0;
+int LBack = 0;
+int LFront = 0;
+  pinMode(LLABl, OUTPUT);
   pinMode(LLAGr, OUTPUT);
-  pinMode(LRAGe, OUTPUT);
+  pinMode(LRABl, OUTPUT);
   pinMode(LRAGr, OUTPUT);
-  pinMode(LEDMund, OUTPUT);
-  pinMode(HeadLED, OUTPUT);
-  pinMode(BackLED, OUTPUT);
-  pinMode(FrontLED, OUTPUT);
+  pinMode(LMBase, OUTPUT);
+  pinMode(LMGr, OUTPUT);
+  pinMode(LMRe, OUTPUT);
+  pinMode(LTop, OUTPUT);
+  pinMode(LBack, OUTPUT);
+  pinMode(LFront, OUTPUT);
 
 
   WiFi.begin(ssid, password);
@@ -62,11 +62,13 @@ void loop()
   else if (data == "left") TurnLeft();
   else if (data == "right") TurnRight();
   else if (data == "stop") MotorStop();
-  else if (data == "ledmund") Mund();
+  else if (data == "ledmouthbase") MouthBase();
+  else if (data == "ledmouthred") MouthRed
+  else if (data == "ledmouthgreen") MouthGreen();
 //
-  else if (data == "ledrey") LRAGe();
+  else if (data == "ledreb") LRABl();
   else if (data == "ledreg") LRAGr();
-  else if (data == "ledley") LLAGe();
+  else if (data == "ledleb") LLABl();
   else if (data == "ledleg") LLAGr();
 //
   else if (data == "ledback") BackLED();
@@ -119,32 +121,33 @@ void MotorStop(void)
   digitalWrite(rightMotorBackward, LOW);
 }
 
-/********************************************* LED OFF*****************************************************/
-void LEDoff(void)
+/*********************************************/
 {
-  digitalWrite(GesichtLED1, LOW);
-  digitalWrite(GesichtLED2, LOW);
-  digitalWrite(KopfLED, LOW);
-  digitalWrite(BackLED, LOW);
-  digitalWrite(FrontLED, LOW);
+  digitalWrite(LLAGr, LOW);
+  digitalWrite(LRABl, LOW);
+  digitalWrite(LRAGr, LOW);
+  digitalWrite(LMBase, LOW);
+  digitalWrite(LMGR, LOW);
+  digitalWrite(LMRe, LOW);
+  digitalWrite(LTOP, LOW);
+  digitalWrite(LBack, LOW);
+  digitalWrite(Front, LOW);
+ /**************************************************/
+ void LLABl(void)
 }
-
-/********************************************* LED LLAGe *****************************************************/
-void LLAGe(void)
-{
-  digitalWrite(LLAGe, HIGH);
+  digitalWrite(LLABl, HIGH);
 }
 
 /********************************************* LED LLAGr *****************************************************/
-void LLAGGr(void)
+void LLAGr(void)
 {
   digitalWrite(LLAGr, HIGH);
 }
 
 /********************************************* LED LRAGe *****************************************************/
-void LRAGe(void)
+void LRABl(void)
 {
-  digitalWrite(LRAGe, HIGH);
+  digitalWrite(LRBlA HIGH);
 }
 
 /********************************************* LED LRAGr *****************************************************/
@@ -154,9 +157,9 @@ void LRAGr(void)
 }
 
 /********************************************* LED Kopf *****************************************************/
-void LED(void)
+void MouthBase(void)
 {
-  digitalWrite(KopfLED, HIGH);
+  digitalwrite(, HIGH);
 }
 
 /********************************************* LED Back *****************************************************/
