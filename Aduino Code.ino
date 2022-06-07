@@ -21,6 +21,7 @@ int LMRe = 0;
 int LTop = 0;
 int LBack = 0;
 int LFront = 0;
+
   pinMode(LLABl, OUTPUT);
   pinMode(LLAGr, OUTPUT);
   pinMode(LRABl, OUTPUT);
@@ -74,6 +75,8 @@ void loop()
   else if (data == "ledback") BackLED();
   else if (data == "ledfront") FrontLED();
   else if (data == "ledhead") HeadLED();
+ //
+ else if (data == "ledstop") LEDStop
 }
  
 /********************************************* Vorwärts *****************************************************/
@@ -122,6 +125,7 @@ void MotorStop(void)
 }
 
 /*********************************************/
+void LEDStop
 {
   digitalWrite(LLAGr, LOW);
   digitalWrite(LRABl, LOW);
@@ -132,7 +136,9 @@ void MotorStop(void)
   digitalWrite(LTOP, LOW);
   digitalWrite(LBack, LOW);
   digitalWrite(Front, LOW);
+}
  /**************************************************/
+ 
  void LLABl(void)
 }
   digitalWrite(LLABl, HIGH);
@@ -159,13 +165,36 @@ void LRAGr(void)
 /********************************************* LED Kopf *****************************************************/
 void MouthBase(void)
 {
-  digitalwrite(, HIGH);
+  digitalwrite(LMBase, HIGH);
 }
+
+/************************************************************************************************************/
+void MouthRed
+{
+  digitalWrite(LMRe, HIGH)
+}
+
+/************************************************************************************************************/
+void MouthGreen
+{
+  digitalWrite(LMGr, HIGH)
+}
+
+/************************************************************************************************************/
+void HeadLED
+{
+  digitalWrite(LTop, HIGH)
+}
+
+/************************************************************************************************************/
+void FrontLED
+{
+  digitalWrite(LFront, HIGH)
 
 /********************************************* LED Back *****************************************************/
 void BackLED(void)
 {
-  digitalWrite(BackLED, HIGH);
+  digitalWrite(LBack, HIGH);
 }
 
 /********************************** App Daten Annahme ******************************************/
